@@ -1,0 +1,8 @@
+2024-02-02 10:56:58 - Neurotec.NException: Invalid response received from server
+   at Neurotec.NResult.RaiseError(Int32 error)
+   at Neurotec.Licensing.NLicense.GetLicenseInfoOnline(String license)
+   at Neurotec.ActivationWizard.Misc.NLicenseInfoEx.FromData(String data, NLicenseInfoType type, NLicenseInfoSourceType sourceType)
+2024-02-02 10:57:55 - Neurotec.NException: Invalid response received from server
+   at Neurotec.NResult.RaiseError(Int32 error)
+   at Neurotec.Licensing.NLicense.GetLicenseInfoOnline(String license)
+   at Neurotec.ActivationWizard.Misc.NLicenseInfoEx.FromData(String data, NLicenseInfoType type, NLicenseInfoSourceType sourceType)

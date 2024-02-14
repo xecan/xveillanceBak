@@ -1,0 +1,2143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Neurotec.Surveillance</name>
+    </assembly>
+    <members>
+        <member name="T:Neurotec.Surveillance.Encoding.NScaleMethod">
+            <summary>
+            Image rescale algorithm.
+            </summary>              
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.Linear">
+            <summary>
+            Nearest Neighbor algorithm. 
+            </summary>                  
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.Cubic">
+            <summary>
+            Linear algorithm. 
+            </summary>        
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.CubicSpline">
+            <summary>
+            Cubic algorithm. 
+            </summary>       
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.CubicCatmullRom">
+            <summary>
+            Cubic Spline algorithm. 
+            </summary>              
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.CubicB05C03">
+            <summary>
+            Cubic Catmull Rom algorithm. 
+            </summary>                   
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.SuperSampling">
+            <summary>
+            Cubic B05C03 algorithm. 
+            </summary>              
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.Lanczos">
+            <summary>
+            Super resampling algorithm.
+            </summary>                 
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.LanczosAdvanced">
+            <summary>
+            Lanczos resampling.
+            </summary>         
+        </member>
+        <member name="F:Neurotec.Surveillance.Encoding.NScaleMethod.SmoothEdge">
+            <summary>
+            Lanczos advanced resampling.
+            </summary>                  
+        </member>
+        <member name="T:Neurotec.Surveillance.Encoding.NGpuJpegEncoder">
+            <summary>
+            Provides functionality for converting NImage to Jpeg using GPU.
+            </summary>                                                     
+        </member>
+        <member name="P:Neurotec.Surveillance.Encoding.NGpuJpegEncoder.CompressionQuality">
+            <summary>
+            Gets or sets Jpeg image compression quality.
+            </summary>
+            <value>
+            Int value of compression quality. Value is in range [1, 100], default value - 85. 
+            </value>                                                                          
+        </member>
+        <member name="P:Neurotec.Surveillance.Encoding.NGpuJpegEncoder.GpuIndex">
+            <summary>
+            Gets an index of GPU unit which is used to convert NImage to Jpeg.
+            </summary>
+            <value>
+            GPU index value.
+            </value>                                                          
+        </member>
+        <member name="M:Neurotec.Surveillance.Encoding.NGpuJpegEncoder.Encode(Neurotec.Images.NImage)">
+            <summary>
+            Converts provided NImage object to Jpeg using GPU and returns as NBuffer object.
+            </summary>
+            <param name="image">NImage object containing image to conver to Jpeg.</param>
+            <returns>
+            NBuffer object containing a converted Jpeg image.
+            </returns>                                                                      
+        </member>
+        <member name="M:Neurotec.Surveillance.Encoding.NGpuJpegEncoder.ScaleAndEncode(Neurotec.Images.NImage,System.UInt32,System.UInt32,Neurotec.Surveillance.Encoding.NScaleMethod)">
+            <summary>
+            Rescales and converts provided NImage object to Jpeg using GPU and returns as NBuffer object.
+            </summary>
+            <param name="image">NImage object containing image to conver to to Jpeg.</param>
+            <param name="outputWidth">Width of an output Jpeg image.</param>
+            <param name="outputHeight">Height of an output Jpeg image.</param>
+            <param name="scaleMethod">Rescale method.</param>
+            <returns>
+            NBuffer object containing a converted Jpeg image. 
+            </returns>                                                                                   
+        </member>
+        <member name="T:Neurotec.Surveillance.NClothingDetails">
+            <summary>
+            Represents subject's clothing and gender details.
+            </summary>                                       
+        </member>
+        <member name="T:Neurotec.Surveillance.NClothingDetails.ValueCollection">
+            <summary>
+            Values collection.
+            </summary>        
+        </member>
+        <member name="M:Neurotec.Surveillance.NClothingDetails.GetKnownValues">
+            <summary>
+            \Returns known values from NClothingDetails.
+            </summary>
+            <returns>
+            String array containing known values.
+            </returns>                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NClothingDetails.Gender">
+            <summary>
+            Gets subject's gender.
+            </summary>
+            <value>
+            NGender object containing subject's gender.
+            </value>                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NClothingDetails.GenderConfidence">
+            <summary>
+            Gets subject's gender confidence value.
+            </summary>
+            <value>
+            GenderConfidence object containing subject's gender confidence value.
+            </value>                                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NClothingDetails.Values">
+            <summary>
+            Gets ValueCollection object.
+            </summary>
+            <value>
+            ValueCollection object.
+            </value>                    
+        </member>
+        <member name="T:Neurotec.Surveillance.NLicensePlate">
+            <summary>
+            Provides car's license plate recognition functionality.
+            </summary>                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.Value">
+            <summary>
+            Gets vehicle's number from a license plate.
+            </summary>
+            <value>
+            String containing vehicle's number from a license plate.
+            </value>                                                
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.Origin">
+            <summary>
+            Gets license plate country code value (3 characters).
+            </summary>
+            <value>
+            License plate country code value (3 characters). 
+            </value>                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.DetectionConfidence">
+            <summary>
+            Gets license plate detection confidence value.
+            </summary>
+            <value>
+            License plate detection confidence float value.
+            </value>                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.OcrConfidence">
+            <summary>
+            Gets license plate's characters recognition confidence value.
+            </summary>
+            <value>
+            License plate's characters recognition confidence float value. 
+            </value>                                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.CharacterHeight">
+            <summary>
+            Get average height of 3 largest characters.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.BoundingBox">
+            <summary>
+            Gets license plate's bounding box rectangle.
+            </summary>
+            <value>
+            Rectangle object containing coordinates, width and height of license plate's bounding box.
+            </value>                                                                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.Rectangle">
+            <summary>
+            Gets license plate's bounding box rectangle.
+            </summary>
+            <value>
+            Rectangle object containing coordinates, width and height of license plate's bounding box.
+            </value>
+            <seealso cref="P:Neurotec.Surveillance.NLicensePlate.BoundingBox"/>                                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.Rotation">
+            <summary>
+            Gets rotation of the Rectangle.
+            </summary>
+            <value>
+            Rectangle rotation value.
+            </value>                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.FrameIndex">
+            <summary>
+            Gets index of a frame where license plate was found.
+            </summary>
+            <value>
+            Index of a frame where license plate was found.
+            </value>                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.Type">
+            <summary>
+            Gets license plate's type value (general, taxi, military, etc.).
+            </summary>
+            <value>
+            String value containing license plate's type (general, taxi, military, etc.). 
+            </value>                                                                      
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlate.Region">
+            <summary>
+            Get license plate region.
+            </summary>
+            <value>
+            String value containing license plate's region.
+            </value>                                                                      
+        </member>
+        <member name="T:Neurotec.Surveillance.NLicensePlateDetails">
+            <summary>
+            Represents car's license plate details. 
+            </summary>                              
+        </member>
+        <member name="T:Neurotec.Surveillance.NLicensePlateDetails.BestLicensePlateCollection">
+            <summary>
+            Provides the collection of best license plates during tracking. 
+            </summary>                                                      
+        </member>
+        <member name="T:Neurotec.Surveillance.NLicensePlateDetails.CurrentLicensePlateCollection">
+            <summary>
+            Provides the collection of all license plates within current frame or object. 
+            </summary>                                                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlateDetails.Best">
+            <summary>
+            Gets the collection of best license plates during license plates tracking.
+            </summary>
+            <value>
+            BestLicensePlateCollection object containing best license plates.
+            </value>                                                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NLicensePlateDetails.Current">
+            <summary>
+            Gets the collection of all license plates within current frame or object.
+            </summary>
+            <value>
+            CurrentLicensePlateCollection object containing all license plates within current frame or object.
+            </value>                                                                                          
+        </member>
+        <member name="T:Neurotec.Surveillance.NNameConfidencePair">
+            <summary>
+            Structure containing name and/or confidence values.
+            </summary>                                         
+        </member>
+        <member name="P:Neurotec.Surveillance.NNameConfidencePair.NativeType">
+            <summary>
+            Defines the native type of the object.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NNameConfidencePair.Name">
+            <summary>
+            Gets or sets name value.
+            </summary>
+            <value>
+            Name value as a string. 
+            </value>                
+        </member>
+        <member name="P:Neurotec.Surveillance.NNameConfidencePair.Confidence">
+            <summary>
+            Gets or sets confidence value.
+            </summary>
+            <value>
+            Confidence value. 
+            </value>                      
+        </member>
+        <member name="T:Neurotec.Surveillance.NsedMatchResult">
+            <summary>
+            Represents matching result.
+            </summary>                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NsedMatchResult.Id">
+            <summary>
+            Gets Id of a matching result.
+            </summary>
+            <value>
+            Id of a matching result.
+            </value>                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NsedMatchResult.Score">
+            <summary>
+            Gets matching score.
+            </summary>
+            <value>
+            Matching score.
+            </value>            
+        </member>
+        <member name="P:Neurotec.Surveillance.NsedMatchResult.MatchingDetails">
+            <summary>
+            Gets matching detail;s object.
+            </summary>
+            <value>
+            NMatchingDetails object.
+            </value>                      
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceEventType">
+            <summary>
+            Enumeration type for different Surveillance events. Different
+            information is available inside EventDetails field of
+            NSurveillanceEventArgs. Events are asynchronous, so no
+            assumption on the order of events should be made.
+            </summary>
+            <remarks>
+            The table below explains what data is available during
+            different events:
+            <xtable columnwidths="33c%">
+            \                      ImageCaptured   FacesDetected   SubjectAppeared   SubjectTrack   SubjectDisappeared
+            ---------------------  ==============  ==============  ================  =============  ===================
+            Source                 \+              \+              \+                \+             \+
+            OriginalImage          \+              \+              \+                \+             
+            FrameIndex             \+              \+              \+                \+             
+            TimeStamp              \+              \+              \+                \+             \+
+            GetDetectedFaces()                     \+                                               
+            Status                                 \+              \+             
+            Template                                               \+                \+             
+            TraceIndex                                             \+                \+             \+
+            GetBestMatches()                                       \+                \+             \+
+            GetSubjectTemplate()                                                                    \+
+            </xtable>
+            </remarks>                                                                                                 
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.ImageCaptured">
+            <summary>
+            Indicates that Surveillance event type is unknown.
+            </summary>                                        
+            <summary>Indicates that a new image was captured from capturing source.</summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.FacesDetected">
+            <summary>Indicates that at least one face was successfully detected in the captured image.</summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.SubjectAppeared">
+            <summary>Indicates that a new subject appeared in the field of view of the capturing device.</summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.SubjectTrack">
+            <summary>Indicates that previously appeared subject is being tracked logging it's activity.</summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.SubjectDisappeared">
+            <summary>Indicates that a previously tracked subject disappeared from the field of view of the capturing device.</summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.SubjectMerged">
+            <summary>
+            Indicates that subject was merged with another subject.
+            </summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.SubjectSplit">
+            <summary>
+            Indicates that subject was split into two.
+            </summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceEventType.Any">
+            <summary>Indicates that any event can be captured by supplied callback function.</summary>
+        </member>
+        <member name="T:Neurotec.Surveillance.NDetectorScaleCount">
+            <summary>
+            Enumerates detector scale count. Bigger values improves quality, but requires more processing power.
+            </summary>
+        </member>
+        <member name="T:Neurotec.Surveillance.NGpuIndex">
+            <summary>
+            Enumerates GPU units by index.
+            </summary>                    
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.None">
+            <summary>
+            All GPU units.
+            </summary>    
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu0">
+            <summary>
+            No GPU index was specified.
+            </summary>                 
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu1">
+            <summary>
+            GPU index 0.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu2">
+            <summary>
+            GPU index 1.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu3">
+            <summary>
+            GPU index 2.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu4">
+            <summary>
+            GPU index 3.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu5">
+            <summary>
+            GPU index 4.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu6">
+            <summary>
+            GPU index 5.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NGpuIndex.Gpu7">
+            <summary>
+            GPU index 6.
+            </summary>  
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceEventArgs">
+            <summary>
+            A class that is passed to event handler and through which
+            event data can be accessed.
+            </summary>                                               
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventArgs.#ctor(Neurotec.Surveillance.NSurveillanceEventType,Neurotec.Surveillance.NSurveillanceEventDetails[])">
+            <summary>
+            Creates a new instance of NSurveillanceEventArgs class.
+            </summary>
+            <param name="eventType">Type of the event.</param>
+            <param name="eventDetails">Event details array.</param>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventArgs.EventType">
+            <summary>
+            Gets event type.
+            </summary>
+            <value>
+            NSurveillanceEventType object which contains event types.
+            </value>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventArgs.EventDetailsArray">
+            <summary>
+            Gets event details object array.
+            </summary>
+            <value>
+            NSurveillanceEventDetails object array which contains events
+            \aarguments.
+            </value>
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceProgressEventArgs">
+            <summary>
+            Event arguments for progress callback.
+            </summary>
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillance">
+            <summary>
+            Base Surveillance class.
+            </summary>
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillance.SourceCollection">
+            <summary>
+            Contains new Surveillance sources.
+            </summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillance.DllName">
+            <summary>Name of the library containing unmanaged part of this class.</summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.NativeModule">
+            <summary>
+            Defines the native module of the object.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.NSurveillanceEventTypeNativeType">
+            <summary>
+            Defines the native type of the NSureveillanceEventType.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.NSurveillanceEventCallbackNativeType">
+            <summary>
+            Defines the native type of the NSurveillanceEventCallback
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.NativeType">
+            <summary>
+            Defines the native type of the object.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.OptimizeModelsAsync(Neurotec.Surveillance.NSurveillanceModalityType,System.Boolean,Neurotec.Surveillance.NGpuIndex,Neurotec.Surveillance.NSurveillanceProgressCallback)">
+            <summary>
+            Optimizes NSureveillance models by specified modalities and GPU indices (asynchronous operation).
+            </summary>
+            <param name="modalities">Surveillance modalities to optimize.</param>
+            <param name="lowGpuMemoryMode">true if low GPU memory mode is used.</param>
+            <param name="indices">GPU indices. </param>
+            <param name="progressCallback">Progress callback. </param>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.#ctor">
+            <summary>
+            Initializes a new instance the Surveillance class.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.AddEvent(Neurotec.Surveillance.NSurveillanceEventType,System.EventHandler{Neurotec.Surveillance.NSurveillanceEventArgs})">
+            <summary>
+            Adds event to class.
+            </summary>
+            <param name="eventType">Type of event to add.</param>
+            <param name="handler">Events handler.</param>        
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.RemoveEvent(Neurotec.Surveillance.NSurveillanceEventType,System.EventHandler{Neurotec.Surveillance.NSurveillanceEventArgs})">
+            <summary>
+            Removes the event from Surveillance framework.
+            </summary>
+            <param name="eventType">Event Type which will be removed.</param>
+            <param name="handler">EventHandler which has the event to
+                                  be removed</param>                         
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.Start">
+            <summary>
+            Starts surveillance and all sources.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.StartAsync">
+            <summary>
+            Starts surveillance and all sources (asynchronous operation).
+            </summary>
+            <remarks>
+            It performs the same operation as synchronous method Start but returns immediately, without blocking
+            the caller.
+            </remarks>
+            <returns>
+            NAsyncOperation object which can be used to wait for an actual result.
+            </returns>                                                                                          
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.Stop">
+            <summary>
+            Stops surveillance and all sources. 
+            </summary>                          
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.StopAsync">
+            <summary>
+            Stops surveillance and all sources (asynchronous operation).
+            </summary>
+            <returns>
+            NAsyncOperation object which can be used to wait for an actual result. 
+            </returns>                                                             
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.StartSource(Neurotec.Surveillance.NSurveillanceSource)">
+            <summary>
+            Starts specified surveillance source.
+            </summary>
+            <param name="source">NSurveillanceSource object to start.</param>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.StartSourceAsync(Neurotec.Surveillance.NSurveillanceSource)">
+            <summary>
+            Starts specified surveillance source (asynchronous operation).
+            </summary>
+            <param name="source">NSurveillanceSource object to start.</param>
+            <returns>
+            NAsyncOperation object which can be used to wait for an actual result. 
+            </returns>                                                             
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.StopSource(Neurotec.Surveillance.NSurveillanceSource)">
+            <summary>
+            Stops specified surveillance source.
+            </summary>
+            <param name="source">NSurveillanceSource object to stop.</param>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.StopSourceAsync(Neurotec.Surveillance.NSurveillanceSource)">
+            <summary>
+            Stops specified surveillance source (asynchronous operation).
+            </summary>
+            <param name="source">NSurveillanceSource object to stop.</param>
+            <returns>
+            NAsyncOperation object. 
+            </returns>                                                      
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.AddTemplate(System.String,Neurotec.IO.NBuffer)">
+            <summary>
+            Adds a template to the internal database.
+            </summary>
+            <param name="template">Bytes array which contains template
+                                   to add.</param>
+            <param name="templateId">Id of template to add.</param>   
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.AddTemplate(System.String,System.Byte[])">
+            <summary>
+            Adds a template to the internal database.
+            </summary>
+            <param name="template">Bytes array which contains template
+                                   to add.</param>
+            <param name="templateId">Id of template to add.</param>   
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.RemoveTemplate(System.String)">
+            <summary>
+            Removes a template with specified Id from internal database.
+            </summary>
+            <param name="templateId">Id of template to remove.</param>  
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.RemoveAllTemplates">
+            <summary>
+            Clears internal template database.
+            </summary>                        
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.GetTemplateIds">
+            <summary>
+            \Returns array of template Ids that internal database
+            contains.
+            </summary>
+            <returns>
+            Array which contains Ids of all templates.
+            </returns>                                           
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillance.OptimizeModelsAsync(Neurotec.Surveillance.NSurveillanceModalityType,Neurotec.Surveillance.NSurveillanceProgressCallback)">
+            <summary>
+            Optimizes NSurveillance models by specified modalities (asynchronous operation).
+            </summary>
+            <param name="modalities">Surveillance modalities to optimize.</param>
+            <param name="progressCallback">Progress callback.</param>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.IsRunning">
+            <summary>
+            Checks if Surveillance is running (performing operations).
+            </summary>
+            <value>
+            bool type value which indicates if Surveillance is running.
+            </value>                                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.DeviceManager">
+            <summary>
+            Gets Device Manager.
+            </summary>          
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.Sources">
+            <summary>
+            Gets the collection of Surveillance sources.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.UseGPU">
+            <summary>
+            Get or Set whether surveillance should use GPU to accelerate processing.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.GPUIndices">
+            <summary>
+            Get or Set GPU indices to be used for acceleration.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.EnableGpuLowMemoryMode">
+            <summary>
+            Enables or disable GPU VRAM conservation. When enabled, minimum required GPU video memory amount is used at the expense of processing speed.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.FacesWithDetailsOnly">
+            <summary>
+            Gets or sets whether only events with extracted face (when face modality is used) are returned.
+            </summary>
+            <value>
+            true if only events with extracted face (when face modality is used) are returned; otherwise, false.
+            </value>                                                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.FacesConfidenceThreshold">
+            <summary>
+            Gets or sets faces confidence threshold value. This threshold is considered is considered when
+            looking for faces in an image. For each face candidate confidence parameter is calculated. With
+            higher threshold value faces are selected more strictly by the face detection routines.
+            </summary>
+            <value>
+            Face confidence threshold value.
+            </value>                                                                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.FacesQualityThreshold">
+            <summary>
+            <paraattr align="justify">
+            Gets or sets the threshold which is considered when
+            extracting facial features from the image. With higher
+            threshold better quality of face image is required to
+            successfully extract facial features. The value of this
+            parameter can be in range [0..100]. The default value is 50.
+            </paraattr>
+            </summary>   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.FacesMinimalInterOcularDistance">
+            <summary>
+            Gets or sets minimal inter ocular distance (i.e. the distance between eyes).
+            </summary>
+            <value>
+            Minimal inter ocular distance (i.e. the distance between eyes).
+            </value>                                                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.FacesTemplateSize">
+            <summary>
+            <paraattr align="justify">
+            Gets or sets template size parameter.
+            </paraattr>
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.MatchingThreshold">
+            <summary>
+            <paraattr align="justify">
+            Gets or sets matching threshold (biggest allowed FAR)
+            parameter of type UShort. Parameter value is equal to -12 *
+            log10(FAR) and must be not less than zero (for example, 48
+            for FAR = 0.01%).
+            </paraattr>
+            </summary>                                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.MatchingMaximalResultCount">
+            <summary>
+            Gets or sets maximum length of the list which is returned by
+            each identification.
+            </summary>                                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.MatchingWithDetails">
+            <summary>
+            Checks or sets whether the matching results include matching details.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.DetectorScaling">
+            <summary>
+            Determines detection model input resolution, lower value increases performance but reduces accuracy.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.VehicleHumanDetectorThreshold">
+            <summary>
+            Gets or sets confidence threshold value for vehicle and human detector. Objects detection with a
+            lower confidence than threshold are discarded.
+            </summary>
+            <value>
+            Vehicle and human detector confidence threshold value.
+            </value>                                                                                        
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateDetectorScaling">
+            <summary>
+            Gets or sets detection model input resolution. Note, that lower value increases performance but
+            reduces accuracy.
+            </summary>
+            <value>
+            Detection model input resolution.
+            </value>                                                                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateDetectorThreshold">
+            <summary>
+            Gets or sets license plate detection threshold (license plate with lower confidence threshold are
+            discarded).
+            </summary>
+            <value>
+            License plate detection threshold.
+            </value>                                                                                         
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateOcrThreshold">
+            <summary>
+            Gets or sets license plate's characters recognition confidence value.
+            </summary>
+            <value>
+            License plate's characters recognition confidence value. 
+            </value>                                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateInterpretOAsZero">
+            <summary>
+            Changes any predicted o letter to 0, because in many cases there is no real difference between o and
+            0 fonts so prediction can be wrong.
+            </summary>
+            <value>
+            true, if predicted o letter should be changed to 0 (zero); otherwise, false.
+            </value>                                                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateMinimalCharacterCount">
+            <summary>
+            Gets or sets minimal character count in a license plate.
+            </summary>
+            <value>
+            Minimal character count in a license plate.
+            </value>                                                
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateEnableTemplateMatching">
+            <summary>
+            Enables or disables LicensePlatePriorityCountries.
+            </summary>
+            <value>
+            Set to true to enable LicensePlatePriorityCountries.
+            </value>                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlatePriorityCountries">
+            <summary>
+            Gets or sets which countries in license plate formats should be evaluated to reduce mistakes. Use
+            three letter ISO country codes separated with spaces, for example: &quot;LTU LVA EST&quot;. If no
+            codes are set, license plate is matched to available formats only if country of origin is determined.
+            </summary>
+            <value>
+            Three letter ISO country codes separated with spaces.
+            </value>                                                                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.LicensePlateLatinOnly">
+            <summary>
+            Get or sets whether only Latin characters should be recognized.
+            </summary>
+            <value>
+            Set to true to only recognize Latin characters.
+            </value>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.FacesDetectMasks">
+            <summary>
+            Gets or sets whether partially occluded faces (i.e. face mask or respirator) should be recognized.
+            </summary>
+            <value>
+            true if partially occluded faces (i.e. face mask or respirator) should be recognized; otherwise,
+            false.
+            </value>                                                                                          
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillance.MaskDetectionThreshold">
+            <summary>
+            Gets or sets mask detection threshold when FaceDetectMasks is set to true. When mask detection
+            confidence value is lower than specified with this threshold, detected face with a mask is rejected.
+            </summary>
+            <value>
+            Mask detection threshold. Available values are [0, 100], default value is 50. 
+            </value>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.Any">
+            <summary>
+            This callback is called on every event.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.ImageCaptured">
+            <summary>
+            This event is fired when a new image is captured.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.FacesDetected">
+            <summary>
+            This callback is called when faces are detected.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.SubjectAppeared">
+            <summary>
+            This event is fired when a new subject appears in the field
+            of view of the camera.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.SubjectTrack">
+            <summary>
+            This event is fired when successful identification is
+            performed on a tracked subject.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.SubjectDisappeared">
+            <summary>
+            This event is fired when a subject being tracked leaves the
+            field of view of the camera.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.SubjectMerged">
+            <summary>
+            This event is fired when two subjects are merged together,
+            for example face subject with person subject.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.SubjectSplit">
+            <summary>
+            This event is fired when one subject is split into two.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillance.IsRunningChanged">
+            <summary>
+            This event is called when Surveillance &quot;running&quot; task changed.
+            </summary>
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceDetectionDetails">
+            <summary>
+            Represents surveillance detection details.
+            </summary>                                
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceDetectionDetails.#ctor">
+            <summary>
+            Creates a new instance of NSurveillanceDetectionDetails.
+            </summary>                                              
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.SubjectType">
+            <summary>
+            Gets or sets NSurveillanceModalityType object containing one of surveillance modality values (None,
+            Faces, Vehicles and Humans or License Plate Recognition).
+            </summary>
+            <value>
+            NSurveillanceModalityType object containing one of surveillance modality values.
+            </value>                                                                                           
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.Rectangle">
+            <summary>
+            Gets or sets bounding box rectangle of a detected object.
+            </summary>
+            <value>
+            Rectangle object containing coordinates, width and height of object's bounding box rectangle. 
+            </value>                                                                                      
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.FaceRectangle">
+            <summary>
+            Gets or sets bounding box rectangle of a detected subject's face.
+            </summary>
+            <value>
+            Rectangle object containing coordinates, width and height of subject face's bounding box rectangle. 
+            </value>                                                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.DetectionConfidence">
+            <summary>
+            Gets or sets detection confidence value.
+            </summary>
+            <value>
+            Detection confidence value (float type). 
+            </value>                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.ObjectColor">
+            <summary>
+            Gets or sets color of a detected surveillance object.
+            </summary>
+            <value>
+            NSurveillanceObjectColorDetails object containing color and color confidence values.
+            </value>                                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.ObjectType">
+            <summary>
+            Gets or sets type of a detected surveillance object.
+            </summary>
+            <value>
+            NSurveillanceObjectTypeDetails object.
+            </value>                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.LicensePlateDetails">
+            <summary>
+            Gets or sets vehicle's license plate details.
+            </summary>
+            <value>
+            NLicensePlateDetails object.
+            </value>                                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.VehicleDetails">
+            <summary>
+            Gets or sets vehicle details.
+            </summary>
+            <value>
+            NVehicleDetails object.
+            </value>                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.ClothingDetails">
+            <summary>
+            Gets or sets NClothingDetails object representing subject's clothing details.
+            </summary>
+            <value>
+            NClothingDetails object.
+            </value>                                                                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionDetails.Face">
+            <summary>
+            Gets or sets detected face object.
+            </summary>
+            <value>
+            NFace object.
+            </value>                          
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceDetectionResult">
+            <summary>
+            Represents object's detection result. 
+            </summary>                            
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceDetectionResult.DetailsCollection">
+            <summary>
+            Detection details collection.
+            </summary>                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionResult.Image">
+            <summary>
+            Gets an image containing a detected surveillance object.
+            </summary>
+            <value>
+            NImage object containing a detected surveillance object.
+            </value>                                                
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionResult.ModalityType">
+            <summary>
+            Gets a type of modality used for surveillance and objects detection.
+            </summary>
+            <value>
+            NSurveillanceModalityType object containing modality type.
+            </value>                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceDetectionResult.Details">
+            <summary>
+            Gets DetailsCollection object.
+            </summary>
+            <value>
+            DetailsCollection object.
+            </value>                      
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceEngine">
+            <summary>
+            Provides functionality for Surveillance engine.
+            </summary>                                     
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEngine.#ctor">
+            <summary>
+            Creates a new instance of NSurveillanceEngine.
+            </summary>                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.ModalityType">
+            <summary>
+            Gets a type of modality used for surveillance and objects detection.
+            </summary>
+            <value>
+            NSurveillanceModalityType object containing modality type. 
+            </value>                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.ThreadCount">
+            <summary>
+            Gets or sets thread count used by Surveillance engine.
+            </summary>
+            <value>
+            Thread count.
+            </value>                                              
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.UseGPU">
+            <summary>
+            Get or Set whether surveillance should use GPU to accelerate processing.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.GPUIndices">
+            <summary>
+            Get or Set GPU indices to be used for acceleration.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.EnableGpuLowMemoryMode">
+            <summary>
+            Enables or disable GPU VRAM conservation. When enabled, minimum required GPU video memory amount is
+            used at the expense of processing speed.
+            </summary>
+            <value>
+            true, when GPU VRAM conservation is enabled; otherwise, false.
+            </value>                                                                                           
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.FacesConfidenceThreshold">
+            <summary>
+            Gets or sets face confidence threshold value.
+            </summary>
+            <value>
+            Face confidence threshold value in range [0,100], default value - 20. Faces with a lower value than
+            specified with the threshold are rejected.
+            </value>                                                                                           
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.FacesQualityThreshold">
+            <summary>
+            <paraattr align="justify">
+            Gets or sets the threshold which is considered when
+            extracting facial features from the image. With higher
+            threshold better quality of face image is required to
+            successfully extract facial features. The value of this
+            parameter can be in range [0..100]. The default value is 50.
+            </paraattr>
+            </summary>   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.FacesMinimalInterOcularDistance">
+            <summary>
+            Gets or sets minimal inter ocular distance (i.e. the distance between eyes).
+            </summary>
+            <value>
+            Minimal inter ocular distance (i.e. the distance between eyes).
+            </value>                                                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.FacesTemplateSize">
+            <summary>
+            <paraattr align="justify">
+            Gets or sets template size parameter.
+            </paraattr>
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.DetectorScaling">
+            <summary>
+            Determines detection model input resolution, lower value increases performance but reduces accuracy.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.VehicleHumanDetectorThreshold">
+            <summary>
+            Gets or sets confidence threshold value for vehicle and human detector. Objects detection with a
+            lower confidence than threshold are discarded.
+            </summary>
+            <value>
+            Vehicle and human detector confidence threshold value. 
+            </value>                                                                                        
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateDetectorScaling">
+            <summary>
+            Gets or sets detection model input resolution. Note, that lower value increases performance but
+            reduces accuracy.
+            </summary>
+            <value>
+            Detection model input resolution. 
+            </value>                                                                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateDetectorThreshold">
+            <summary>
+            Gets or sets license plate detection threshold (license plate with lower confidence threshold are
+            discarded).
+            </summary>
+            <value>
+            License plate detection threshold. 
+            </value>                                                                                         
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateOcrThreshold">
+            <summary>
+            Gets or sets license plate's characters recognition confidence value.
+            </summary>
+            <value>
+            License plate's characters recognition confidence value. 
+            </value>                                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateInterpretOAsZero">
+            <summary>
+            Changes any predicted o letter to 0, because in many cases there is no real difference between o and
+            0 fonts so prediction can be wrong.
+            </summary>
+            <value>
+            true, if predicted o letter should be changed to 0 (zero); otherwise, false. 
+            </value>                                                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateMinimalCharacterCount">
+            <summary>
+            Gets or sets minimal character count in a license plate.
+            </summary>
+            <value>
+            Minimal character count in a license plate. 
+            </value>                                                
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateEnableTemplateMatching">
+            <summary>
+            Enables or disables LicensePlatePriorityCountries.
+            </summary>
+            <value>
+            Set to true to enable LicensePlatePriorityCountries. 
+            </value>                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlateLatinOnly">
+            <summary>
+            Get or sets whether only Latin characters should be recognized.
+            </summary>
+            <value>
+            Set to true to only recognize Latin characters.
+            </value>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.LicensePlatePriorityCountries">
+            <summary>
+            Gets or sets which countries in license plate formats should be evaluated to reduce mistakes. Use
+            three letter ISO country codes separated with spaces, for example: &quot;LTU LVA EST&quot;. If no
+            codes are set, license plate is matched to available formats only if country of origin is determined.
+            </summary>
+            <value>
+            Three letter ISO country codes separated with spaces. 
+            </value>                                                                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEngine.FacesDetectMasks">
+            <summary>
+            Gets or sets whether partially occluded faces (i.e. face mask or respirator) should be recognized.
+            </summary>
+            <value>
+            true if partially occluded faces (i.e. face mask or respirator) should be recognized; otherwise,
+            false.
+            
+            
+            </value>                                                                                          
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEngine.Initialize(Neurotec.Surveillance.NSurveillanceProgressCallback)">
+            <summary>
+            Initializes NSurveillanceEngine.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEngine.Detect(Neurotec.Images.NImage)">
+            <summary>
+            Detects Surveillance object from the specified image.
+            </summary>
+            <param name="image">NImage object containing an image for detection by Surveillance engine.</param>
+            <returns>
+            NSurveillanceDetectionResult object containing detection result from a specified image.
+            </returns>                                                                                         
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEngine.DetectAsync(Neurotec.Images.NImage)">
+            <summary>
+            Detects object from the specified image (asynchronous operation).
+            </summary>
+            <param name="image">NImage object containing an image for detection by Surveillance engine.</param>
+            <returns>
+            NSurveillanceDetectionResult object containing detection result from a specified image. 
+            </returns>                                                                                         
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEngine.DetectWithParameters(Neurotec.Images.NImage,System.String,Neurotec.Surveillance.NSurveillanceModalityType)">
+            <summary>
+            Detects Surveillance object from the specified image with detection parameters.
+            </summary>
+            <param name="image">NImage object containing an image for detection by Surveillance engine.</param>
+            <param name="parameters">PropertyBag string containing detection parameters.</param>
+            <param name="modalityOverride">Modality overriding parameter.</param>
+            <returns>
+            NSurveillanceDetectionResult object containing detection result from a specified image.
+            </returns>                                                                                         
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEngine.DetectWithParametersAsync(Neurotec.Images.NImage,System.String,Neurotec.Surveillance.NSurveillanceModalityType)">
+            <summary>
+            Detects object from the specified image with detection parameters(asynchronous operation).
+            </summary>
+            <param name="image">NImage object containing an image for detection by Surveillance engine.</param>
+            <param name="parameters">PropertyBag string containing detection parameters.</param>
+            <param name="modalityOverride">Modality overriding parameter.</param>
+            <returns>
+            NSurveillanceDetectionResult object containing detection result from a specified image. 
+            </returns>                                                                                         
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceObjectType">
+            <summary>
+            Enumerates surveillance objects.
+            </summary>                      
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectType.None">
+            <summary>
+            Any object.
+            </summary> 
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectType.Person">
+            <summary>
+            Object is a car.
+            </summary>      
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectType.Bus">
+            <summary>
+            Object is a person.
+            </summary>         
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectType.Truck">
+            <summary>
+            Object is a bus.
+            </summary>      
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectType.Bike">
+            <summary>
+            Object is a truck.
+            </summary>        
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceObjectTypeDetails">
+            <summary>
+            Represents detected object type details. 
+            </summary>                               
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectTypeDetails.Type">
+            <summary>
+            Gets or sets NSurveillanceObjectType object.
+            </summary>
+            <value>
+            NSurveillanceObjectType object.
+            </value>                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectTypeDetails.CarConfidence">
+            <summary>
+            Gets or sets confidence value if detected object is a car.
+            </summary>
+            <value>
+            Confidence value if detected object is a car.
+            </value>                                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectTypeDetails.PersonConfidence">
+            <summary>
+            Gets or sets confidence value if detected object is a person.
+            </summary>
+            <value>
+            Confidence value if detected object is a person.
+            </value>                                                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectTypeDetails.BusConfidence">
+            <summary>
+            Gets or sets confidence value if detected object is a bus.
+            </summary>
+            <value>
+            Confidence value if detected object is a bus.
+            </value>                                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectTypeDetails.TruckConfidence">
+            <summary>
+            Gets or sets confidence value if detected object is a truck.
+            </summary>
+            <value>
+            Confidence value if detected object is a truck.
+            </value>                                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectTypeDetails.BikeConfidence">
+            <summary>
+            Gets or sets confidence value if detected object is a bike.
+            </summary>
+            <value>
+            Confidence value if detected object is a bike.
+            </value>                                                   
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceObjectDirection">
+            <summary>
+            Represents detected or tracked object direction values. 
+            </summary>                                              
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.None">
+            <summary>
+            Any direction.
+            </summary>    
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.NorthEast">
+            <summary>
+            Object was/is moving north.
+            </summary>                 
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.East">
+            <summary>
+            Object was/is moving north east.
+            </summary>                      
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.SouthEast">
+            <summary>
+            Object was/is moving east.
+            </summary>                
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.South">
+            <summary>
+            Object was/is moving south east.
+            </summary>                      
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.SouthWest">
+            <summary>
+            Object was/is moving south.
+            </summary>                 
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.West">
+            <summary>
+            Object was/is moving south west.
+            </summary>                      
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectDirection.NorthWest">
+            <summary>
+            Object was/is moving west.
+            </summary>                
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails">
+            <summary>
+            Represents detected object direction details. 
+            </summary>                                    
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.Direction">
+            <summary>
+            Gets or sets NSurveillanceObjectDirection object.
+            </summary>
+            <value>
+            NSurveillanceObjectDirection object.
+            </value>                                         
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.NorthConfidence">
+            <summary>
+            Gets or sets north confidence value.
+            </summary>
+            <value>
+            North confidence value.
+            </value>                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.NorthEastConfidence">
+            <summary>
+            Gets or sets north east confidence value.
+            </summary>
+            <value>
+            North east confidence value.
+            </value>                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.EastConfidence">
+            <summary>
+            Gets or sets east confidence value.
+            </summary>
+            <value>
+            East confidence value.
+            </value>                           
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.SouthEastConfidence">
+            <summary>
+            Gets or sets south east confidence value.
+            </summary>
+            <value>
+            South east confidence value.
+            </value>                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.SouthConfidence">
+            <summary>
+            Gets or sets south confidence value.
+            </summary>
+            <value>
+            South confidence value.
+            </value>                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.SouthWestConfidence">
+            <summary>
+            Gets or sets south west confidence value.
+            </summary>
+            <value>
+            South west confidence value.
+            </value>                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.WestConfidence">
+            <summary>
+            Gets or sets west confidence value.
+            </summary>
+            <value>
+            West confidence value.
+            </value>                           
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectDirectionDetails.NorthWestConfidence">
+            <summary>
+            Gets or sets north west confidence value.
+            </summary>
+            <value>
+            North west confidence value.
+            </value>                                 
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceObjectColor">
+            <summary>
+            Enumerates tracked object color values.
+            </summary>                             
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.None">
+            <summary>
+            Any color.
+            </summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Orange">
+            <summary>
+            Red color.
+            </summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Yellow">
+            <summary>
+            Orange color.
+            </summary>   
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Green">
+            <summary>
+            Yellow color.
+            </summary>   
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Blue">
+            <summary>
+            Green color.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Silver">
+            <summary>
+            Blue color.
+            </summary> 
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.White">
+            <summary>
+            Silver color.
+            </summary>   
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Black">
+            <summary>
+            White color.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Brown">
+            <summary>
+            Black color.
+            </summary>  
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceObjectColor.Gray">
+            <summary>
+            Brown color.
+            </summary>  
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceObjectColorDetails">
+            <summary>
+            Represents surveillance object color details.
+            </summary>                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.Color">
+            <summary>
+            Gets or sets color of a detected object.
+            </summary>
+            <value>
+            NSurveillanceObjectColor containing object color.
+            </value>                                         
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.RedColorConfidence">
+            <summary>
+            Gets or sets red color confidence value.
+            </summary>
+            <value>
+            Red color confidence value. 
+            </value>                                
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.OrangeColorConfidence">
+            <summary>
+            Gets or sets orange color confidence value.
+            </summary>
+            <value>
+            Orange color confidence value. 
+            </value>                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.YellowColorConfidence">
+            <summary>
+            Gets or sets yellow color confidence value.
+            </summary>
+            <value>
+            Yellow color confidence value. 
+            </value>                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.GreenColorConfidence">
+            <summary>
+            Gets or sets green color confidence value.
+            </summary>
+            <value>
+            Green color confidence value. 
+            </value>                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.BlueColorConfidence">
+            <summary>
+            Gets or sets blue color confidence value.
+            </summary>
+            <value>
+            Blue color confidence value.
+            </value>                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.SilverColorConfidence">
+            <summary>
+            Gets or sets silver color confidence value.
+            </summary>
+            <value>
+            Silver color confidence value. 
+            </value>                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.WhiteColorConfidence">
+            <summary>
+            Gets or sets white color confidence value.
+            </summary>
+            <value>
+            White color confidence value. 
+            </value>                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.BlackColorConfidence">
+            <summary>
+            Gets or sets black color confidence value.
+            </summary>
+            <value>
+            Black color confidence value.
+            </value>                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.BrownColorConfidence">
+            <summary>
+            Gets or sets brown color confidence value.
+            </summary>
+            <value>
+            Brown color confidence value.
+            </value>                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceObjectColorDetails.GrayColorConfidence">
+            <summary>
+            Gets or sets gray color confidence value.
+            </summary>
+            <value>
+            Gray color confidence value. 
+            </value>                                 
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceEventDetails">
+            <summary>
+            A class that provides access to event details data.
+            </summary>                                         
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceEventDetails.BestMatchCollection">
+            <summary>
+            Contains best matching items.
+            </summary>                   
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceEventDetails.CurrentMatchCollection">
+            <summary>
+            Contains current matching items.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.NativeType">
+            <summary>
+            Defines the native type of the object.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventDetails.GetDetectedFaces">
+            <summary>
+            Gets the list of detected faces attributes.
+            </summary>
+            <returns>
+            Array of NLAttributes objects.
+            </returns>                                 
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventDetails.GetSubjectTemplate">
+            <summary>
+            Retrieves generalized Subject template.
+            </summary>
+            <returns>
+            Subject template is a <b>compressed</b> generalized template
+            of all extracted faces during subject tracking whose Id
+            matches that of the best matched Id. If there is no best
+            match, then it includes all templates into generalization.
+            
+            The template is updated every time a new face is determined
+            to belong to the tracked subject.
+            
+            <b>Returned template must be cloned before using it.</b>
+            </returns>                                                  
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventDetails.GetOriginalImage(System.Boolean)">
+            <summary>
+            Retrieves the originally captured image.
+            </summary>
+            <param name="cache">If true, object will be cached; otherwise \- false.</param>
+            <returns>
+            NImage object containing original image.
+            </returns>                                                                     
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventDetails.GetVideoSample(System.Boolean)">
+            <summary>
+            Retrieves captured video sample.
+            </summary>
+            <param name="cache">If true, object will be cached; otherwise \- false.</param>
+            <returns>
+            NVideoSample object containing video sample.
+            </returns>                                                                     
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventDetails.GetAttribtues(System.Boolean)">
+            <summary>
+            Gets face attributes from specified surveillance event details.
+            </summary>
+            <param name="cache">If true, object will be cached; otherwise \- false.</param>
+            <returns>
+            NLAttributes object. 
+            </returns>                                                                     
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceEventDetails.GetFace(System.Boolean)">
+            <summary>
+            Gets face of the specified event.
+            </summary>
+            <param name="cache">If true, object will be cached; otherwise \- false.</param>
+            <returns>
+            NFace object.
+            </returns>                                                                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.Owner">
+            <summary>
+            Gets NSurveillance owner.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.TraceIndex">
+            <summary>
+            A property that returns an index of the current subject being
+            tracked. The index is zero-based and represents unique id of
+            subject being tracked at the current moment. After subject
+            disappears this index becomes invalid.
+            </summary>                                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.FrameIndex">
+            <summary>
+            A property that returns the number of captured images prior
+            to this event.
+            </summary>                                                 
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.TimeStamp">
+            <summary>
+            A property that returns the date and time of the captured
+            image.
+            </summary>                                               
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.VideoTimeStamp">
+            <summary>
+            A property that returns time in video of the captured image.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.OriginalImage">
+            <summary>
+            A property that returns originally captured image.
+            </summary>                                        
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.Attributes">
+            <summary>
+            Gets face attributes from surveillance event details.
+            </summary>
+            <value>
+            NLAttributes object.
+            </value>                                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.Face">
+            <summary>
+            Gets face of the specified event.
+            </summary>
+            <value>
+            NFace object.
+            </value>                         
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.AttributesContainsDetails">
+            <summary>
+            Checks whether surveillance event contains extraction details.
+            </summary>
+            <value>
+            If true, an event contains extraction details (object was extracted); if false, object was not
+            extracted yet and extraction details are not available (but still object tracking rectangle can be
+            drawn).
+            </value>                                                                                          
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.Rectangle">
+            <summary>
+            A property that returns bounding rectangle of a subject being
+            processed.
+            </summary>                                               
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.Template">
+            <summary>
+            A property that returns extracted serialized template.
+            </summary>                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.ModalityType">
+            <summary>
+            A property that returns type of the subject event.
+            </summary>                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.SubjectType">
+            <summary>
+            A property that returns subject type for current event
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.FaceConfidence">
+            <summary>
+            A property that returns confidence of tracked face if any.
+            </summary>                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.BestMatches">
+            <summary>
+            Retrieves BestMatchesCollection.
+            </summary>                      
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.CurrentMatches">
+            <summary>
+            Retrieves CurrentMatchesCollection.
+            </summary>                      
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.Error">
+            <summary>
+            Gets the most recent error for the specified surveillance event.
+            </summary>
+            <value>
+            Exception object.
+            </value>                                                        
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.MergedSubject">
+            <summary>
+            Get subject that was merged with current subject. Only applicable during SubjectMerged event.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.SplitFromSubject">
+            <summary>
+            Get subject from which current subject was split. Only applicable during SubjectSplit event.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceEventDetails.BestDetails">
+            <summary>
+            Get event containing best details for tracked subject.
+            </summary>
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceModalityType">
+            <summary>
+            Enumerates surveillance modality types.
+            </summary>                             
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceModalityType.Faces">
+            <summary>
+            None of these modalities were selected.
+            </summary>                             
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceModalityType.VehiclesAndHumans">
+            Indicates that faces should be processed.
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceModalityType.LicensePlateRecognition">
+            Indicates that vehicles and humans should be processed.
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceSourceType">
+            <summary>
+            Enumerates surveillance source types.
+            </summary>
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceSourceType.Video">
+            Indicates a camera.
+        </member>
+        <member name="F:Neurotec.Surveillance.NSurveillanceSourceType.Unknown">
+            Indicates a video.
+        </member>
+        <member name="T:Neurotec.Surveillance.NSurveillanceSource">
+            <summary>
+            Provides functions for managing Surveillance sources - cameras and video files.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.NativeType">
+            <summary>
+            Defines the native type of the object.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceSource.#ctor">
+            <summary>
+            Creates a new instance of NSurveillanceSource class.
+            </summary>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceSource.#ctor(Neurotec.Surveillance.NSurveillanceModalityType,Neurotec.Devices.NCamera)">
+            <summary>
+            Creates a new instance of NSurveillanceSource class.
+            </summary>
+            <param name="modalities">Surveillance modalites type.</param>
+            <param name="camera">NCamera object.</param>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceSource.#ctor(Neurotec.Surveillance.NSurveillanceModalityType,Neurotec.Media.NMediaReader)">
+            <summary>
+            Creates a new instance of NSurveillanceSource class.
+            </summary>
+            <param name="modalities">Surveillance modalites type.</param>
+            <param name="reader">NMediaReader object.</param>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Owner">
+            <summary>
+            Gets NSurveillance owner.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Camera">
+            <summary>
+            Gets or sets the camera for the current NSurveillanceSource.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Video">
+            <summary>
+            Gets or sets the media reader containing the video for the current NSurveillanceSource.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Type">
+            <summary>
+            Gets the NSurveillanceSource type.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.ModalityType">
+            <summary>
+            Gets a type of modality used for surveillance source.
+            </summary>
+            <value>
+            NSurveillanceModalityType object containing modality type. 
+            </value>                                                   
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.State">
+            <summary>
+            Gets the NSurveillanceSource state.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Length">
+            <summary>
+            Gets the TimeSpan structure representing the length of NSurveillanceSource.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Position">
+            <summary>
+            Gets or sets the TimeSpan structure representing the position of NSurveillanceSource.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Error">
+            <summary>
+            Gets the exception thrown internally by processing NSurveillanceSource.
+            </summary>
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.Warning">
+            <summary>
+            Gets the warning set internally by processing NSurveillanceSource.
+            </summary>
+        </member>
+        <member name="E:Neurotec.Surveillance.NSurveillanceSource.IsCapturingChanged">
+            <summary>
+            This event is called when Surveillance Source &quot;capturing&quot; state changed.
+            </summary>                                                              
+        </member>
+        <member name="P:Neurotec.Surveillance.NSurveillanceSource.RegionOfInterest">
+            <summary>
+            Gets or sets rectangle coordinates for region of interest frame.
+            </summary>
+            <value>
+            RectangleF containing coordinates for region of interest frame.
+            </value>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceSource.GetCurrentFormat">
+            <summary>
+            Gets current media format used in surveillance.
+            </summary>
+            <returns>
+            NMediaFormat object.
+            </returns>                                     
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceSource.SetCurrentFormat(Neurotec.Media.NMediaFormat)">
+            <summary>
+            Sets current media format used in surveillance.
+            </summary>
+            <param name="value">NMediaFormat object. </param>
+        </member>
+        <member name="M:Neurotec.Surveillance.NSurveillanceSource.GetFormats">
+            <summary>
+            Gets all formats supported by camera or video.
+            </summary>
+            <returns>
+            An array of media formats supported by a camera or video.
+            </returns>                                               
+        </member>
+        <member name="T:Neurotec.Surveillance.NTrackingDetails">
+            <summary>
+            Represents objects tracking details.
+            </summary>                          
+        </member>
+        <member name="T:Neurotec.Surveillance.NTrackingDetails.MatchResultCollection">
+            <summary>
+            Collection of match results. 
+            </summary>                   
+        </member>
+        <member name="T:Neurotec.Surveillance.NTrackingDetails.LicensePlateCollection">
+            <summary>
+            Collection of detected license plates.
+            </summary>                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.TimeStamp">
+            <summary>
+            Gets time stamp from tracking details.
+            </summary>
+            <value>
+            Time stamp value.
+            </value>                              
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.FrameIndex">
+            <summary>
+            Gets frame index.
+            </summary>
+            <value>
+            Frame index. 
+            </value>         
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.SubjectType">
+            <summary>
+            Gets which surveillance modalities was detected for a subject.
+            </summary>
+            <value>
+            NSurveillanceModalityType object containing subject modality type.
+            </value>
+            <remarks>
+            E.g., when vehicle and human detector is enabled and subject is turned away, only vehicle type is
+            returned. Or when a face and a vehicle is detected, vehicle + human type is returned.
+            
+            These surveilance subject modalities are available: None, Faces, VehiclesAndHumans.
+            </remarks>                                                                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.Rectangle">
+            <summary>
+            Gets rectangle of bounding box of a tracked object.
+            </summary>
+            <value>
+            Rectangle object containing coordinates, width and height.
+            </value>                                                  
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.Attributes">
+            <summary>
+            Gets face attributes (like age, gender, emotions and other) of a detected face.
+            </summary>
+            <value>
+            NLAttributes object containing face attributes of a detected face. 
+            </value>                                                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.AttributesContainsDetails">
+            <summary>
+            Gets whether face template was extracted and contains faces attributes such as gender or face
+            expression.
+            </summary>
+            <value>
+            true, if extracted face template contains face attributes.
+            </value>                                                                                     
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.MatchResults">
+            <summary>
+            Gets match results collection containing subject's matching results.
+            </summary>
+            <value>
+            MatchResultCollection object containing subject's matching results.
+            </value>                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NTrackingDetails.LicensePlates">
+            <summary>
+            Gets license plates collection.
+            </summary>
+            <value>
+            LicensePlateCollection object.
+            </value>                       
+        </member>
+        <member name="T:Neurotec.Surveillance.NVehicleOrientation">
+            <summary>
+            Enumerates vehicle orientation values.
+            </summary>                            
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.RearRight">
+            <summary>
+            Right side of a vehicle is visible.
+            </summary>                         
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.Rear">
+            <summary>
+            Rear right side of a vehicle is visible.
+            </summary>                              
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.RearLeft">
+            <summary>
+            Rear side of a vehicle is visible.
+            </summary>                        
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.Left">
+            <summary>
+            Rear left side of a vehicle is visible.
+            </summary>                             
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.FrontLeft">
+            <summary>
+            Left side of a vehicle is visible.
+            </summary>                        
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.Front">
+            <summary>
+            Front left side of a vehicle is visible.
+            </summary>                              
+        </member>
+        <member name="F:Neurotec.Surveillance.NVehicleOrientation.FrontRight">
+            <summary>
+            Front side of a vehicle is visible.
+            </summary>                         
+        </member>
+        <member name="T:Neurotec.Surveillance.NVehicleDetails">
+            <summary>
+            Represents vehicle details. 
+            </summary>                  
+        </member>
+        <member name="T:Neurotec.Surveillance.NVehicleDetails.TagCollection">
+            <summary>
+            Vehicle body type collection (sedan, coupe, bus, tractor, etc.). 
+            </summary>                                                       
+        </member>
+        <member name="T:Neurotec.Surveillance.NVehicleDetails.ModelCollection">
+            <summary>
+            Vehicle model collection. 
+            </summary>                
+        </member>
+        <member name="P:Neurotec.Surveillance.NVehicleDetails.NVehicleOrientationNativeType">
+            <summary>
+            Gets NVehicleOrientation native type.
+            </summary>
+            <value>
+            NVehicleOrientation native type.
+            </value>                             
+        </member>
+        <member name="M:Neurotec.Surveillance.NVehicleDetails.GetKnownMakes">
+            <summary>
+            Gets the array of known vehicle makes (names of vehicle manufacturers).
+            </summary>
+            <returns>
+            String array containing known vehicle makes.
+            </returns>                                                             
+        </member>
+        <member name="M:Neurotec.Surveillance.NVehicleDetails.GetKnownModels">
+            <summary>
+            Gets the array of all known vehicle models.
+            </summary>
+            <returns>
+            String array containing known vehicle models. 
+            </returns>                                    
+        </member>
+        <member name="M:Neurotec.Surveillance.NVehicleDetails.GetKnownModels(System.String)">
+            <summary>
+            Gets the array of known vehicle models of the specified vehicle make.
+            </summary>
+            <param name="make">Vehicle make (manufacturer) to retrieve its all known models.</param>
+            <returns>
+            String array containing known vehicle models.
+            </returns>
+            <seealso cref="M:Neurotec.Surveillance.NVehicleDetails.GetKnownMakes"/>                                                         
+        </member>
+        <member name="M:Neurotec.Surveillance.NVehicleDetails.GetKnownTags">
+            <summary>
+            Gets all known vehicle body types (like sedan, coupe, bus, tractor, etc.).
+            </summary>
+            <returns>
+            String array containing known vehicle body types.
+            </returns>                                                                
+        </member>
+        <member name="P:Neurotec.Surveillance.NVehicleDetails.Orientation">
+            <summary>
+            Gets vehicle orientation value (Front, Back, Left, FrontLeft, etc.).
+            </summary>
+            <value>
+            Vehicle orientation value.
+            </value>                                                            
+        </member>
+        <member name="P:Neurotec.Surveillance.NVehicleDetails.OrientationAngle">
+            <summary>
+            Gets an angle of vehicle orientation.
+            </summary>
+            <value>
+            Vehicle orientation angle. 
+            </value>                             
+        </member>
+        <member name="P:Neurotec.Surveillance.NVehicleDetails.OrientationConfidence">
+            <summary>
+            Gets confidence value of vehicle's orientation.
+            </summary>
+            <value>
+            Confidence value of vehicle's orientation.
+            </value>                                       
+        </member>
+        <member name="P:Neurotec.Surveillance.NVehicleDetails.Models">
+            <summary>
+            Gets ModelCollection object containing vehicle models.
+            </summary>
+            <value>
+            ModelCollection object containing vehicle models.
+            </value>                                              
+        </member>
+        <member name="P:Neurotec.Surveillance.NVehicleDetails.Tags">
+            <summary>
+            Gets TagCollection object containing vehicle body types.
+            </summary>
+            <value>
+            TagCollection object containing vehicle body types. 
+            </value>                                                
+        </member>
+    </members>
+</doc>

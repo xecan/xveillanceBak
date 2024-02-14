@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9CCF739-6570-4FFA-9A39-09E18FB7D218}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <StartupObject>Neurotec.Samples.Code.Program</StartupObject>
+    <RootNamespace>Neurotec.Samples</RootNamespace>
+    <AssemblyName>XveillanceBackground</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Neurotechnology.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Bin\Win64_x64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQLConnection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MySQLConnection.1.0.1\lib\MySQLConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Biometrics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics.Gui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Biometrics.Gui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Devices, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Devices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Gui, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Gui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Licensing, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Licensing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Media, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Media.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Media.Processing, Version=10.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Media.Processing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Neurotec.Surveillance, Version=6.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\dotNET\Neurotec.Surveillance.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Bin\dotNET\System.Data.SQLite.dll</HintPath>
+      <Private>False</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Twilio, Version=6.15.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Twilio.6.15.2\lib\net35\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AddToWatchListForm.resx">
+      <DependentUpon>AddToWatchListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CellPhoneWatchlistForm.resx">
+      <DependentUpon>CellPhoneWatchlistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConnectToDeviceForm.resx">
+      <DependentUpon>ConnectToDeviceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetailsFilterForm.resx">
+      <DependentUpon>DetailsFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetailsView.resx">
+      <DependentUpon>DetailsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EnrollForm.resx">
+      <DependentUpon>EnrollForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EnrollUser.resx">
+      <DependentUpon>EnrollUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExportEventsForm.resx">
+      <DependentUpon>ExportEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacesWatchlistForms.resx">
+      <DependentUpon>FacesWatchlistForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageView.resx">
+      <DependentUpon>ImageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LicensePlateWatchlistForm.resx">
+      <DependentUpon>LicensePlateWatchlistForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LongActionDialog.resx">
+      <DependentUpon>LongActionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OnvifConfigDialog.resx">
+      <DependentUpon>OnvifConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptimizationDialog.resx">
+      <DependentUpon>OptimizationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PresetsForm.resx">
+      <DependentUpon>PresetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PriorityCountriesForm.resx">
+      <DependentUpon>PriorityCountriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectFilterForm.resx">
+      <DependentUpon>SelectFilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectRegionOfInterestForm.resx">
+      <DependentUpon>SelectRegionOfInterestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SourceControl.resx">
+      <DependentUpon>SourceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SourceSettingsForm.resx">
+      <DependentUpon>SourceSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StoreForm.resx">
+      <DependentUpon>StoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubjectForm.resx">
+      <DependentUpon>SubjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubjectsView.resx">
+      <DependentUpon>SubjectsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SurveillanceView.resx">
+      <DependentUpon>SurveillanceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateCameraForm.resx">
+      <DependentUpon>UpdateCameraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VerificationCodeForm.resx">
+      <DependentUpon>VerificationCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoForm.resx">
+      <DependentUpon>VideoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewsPanel.resx">
+      <DependentUpon>ViewsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VisitorDetailForm.resx">
+      <DependentUpon>VisitorDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\AllVisitorsCollection.cs" />
+    <Compile Include="Code\CaptureEventData.cs" />
+    <Compile Include="Code\CellPhoneCollection.cs" />
+    <Compile Include="Code\CompanyCollection.cs" />
+    <Compile Include="Code\DetailsFilter.cs" />
+    <Compile Include="Code\EnrollUserCollection.cs" />
+    <Compile Include="Code\FaceCollection.cs" />
+    <Compile Include="Code\Filter.cs" />
+    <Compile Include="Code\LicensePlateCollection.cs" />
+    <Compile Include="Code\LoginCollection.cs" />
+    <Compile Include="Code\Preset.cs" />
+    <Compile Include="Code\Record.cs" />
+    <Compile Include="Code\RecordCollection.cs" />
+    <Compile Include="Code\SearchAreaConfig.cs" />
+    <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="Code\SourceController.cs" />
+    <Compile Include="Code\StoreCollection.cs" />
+    <Compile Include="Code\SurveillanceConfig.cs" />
+    <Compile Include="Code\UserCollection.cs" />
+    <Compile Include="Code\Utils.cs" />
+    <Compile Include="Code\VisitorWatchListCollection.cs" />
+    <Compile Include="Forms\AddToWatchListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddToWatchListForm.Designer.cs">
+      <DependentUpon>AddToWatchListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CellPhoneWatchlistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CellPhoneWatchlistForm.Designer.cs">
+      <DependentUpon>CellPhoneWatchlistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetailsFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetailsFilterForm.Designer.cs">
+      <DependentUpon>DetailsFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetailsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DetailsView.Designer.cs">
+      <DependentUpon>DetailsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DoubleBufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\EnrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnrollForm.Designer.cs">
+      <DependentUpon>EnrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EnrollUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnrollUser.Designer.cs">
+      <DependentUpon>EnrollUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExportEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportEventsForm.Designer.cs">
+      <DependentUpon>ExportEventsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacesWatchlistForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacesWatchlistForms.Designer.cs">
+      <DependentUpon>FacesWatchlistForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ISurveillanceView.cs" />
+    <Compile Include="Forms\LicensePlateWatchlistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LicensePlateWatchlistForm.Designer.cs">
+      <DependentUpon>LicensePlateWatchlistForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OnvifConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OnvifConfigDialog.Designer.cs">
+      <DependentUpon>OnvifConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptimizationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptimizationDialog.Designer.cs">
+      <DependentUpon>OptimizationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PathUtils.cs" />
+    <Compile Include="Forms\PresetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PresetsForm.Designer.cs">
+      <DependentUpon>PresetsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PriorityCountriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PriorityCountriesForm.Designer.cs">
+      <DependentUpon>PriorityCountriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectFilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectFilterForm.Designer.cs">
+      <DependentUpon>SelectFilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectRegionOfInterestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectRegionOfInterestForm.Designer.cs">
+      <DependentUpon>SelectRegionOfInterestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SourceSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SourceSettingsForm.Designer.cs">
+      <DependentUpon>SourceSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SourceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SourceControl.Designer.cs">
+      <DependentUpon>SourceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SourcesPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\StoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StoreForm.Designer.cs">
+      <DependentUpon>StoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubjectForm.Designer.cs">
+      <DependentUpon>SubjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubjectsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\SubjectsView.Designer.cs">
+      <DependentUpon>SubjectsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SurveillanceView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\SurveillanceView.Designer.cs">
+      <DependentUpon>SurveillanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateCameraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateCameraForm.Designer.cs">
+      <DependentUpon>UpdateCameraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VerificationCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VerificationCodeForm.Designer.cs">
+      <DependentUpon>VerificationCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\VisitorDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VisitorDetailForm.Designer.cs">
+      <DependentUpon>VisitorDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\EventData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Program.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\SubjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\ConnectToDeviceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConnectToDeviceForm.designer.cs">
+      <DependentUpon>ConnectToDeviceForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LongActionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LongActionDialog.designer.cs">
+      <DependentUpon>LongActionDialog.cs</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Forms\VideoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VideoForm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>VideoForm.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Activation\pgd.conf" />
+    <None Include="bin\Cameras\NdmCisco\NdmCisco.ini" />
+    <None Include="bin\Cameras\NdmMobotixThermal\NdmMobotixThermal.ini" />
+    <None Include="bin\Cameras\NdmMobotix\NdmMobotix.ini" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0001.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0002.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0003.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0004.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0005.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0006.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0007.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0008.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0009.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0010.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0011.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0012.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0013.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0014.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0015.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0016.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0017.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0018.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0019.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0020.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0021.md3" />
+    <None Include="bin\Cameras\NdmNikonMaid\Type0022.md3" />
+    <None Include="bin\CountSubjects.ilk" />
+    <None Include="bin\NdmMedia.ini" />
+    <None Include="bin\NdmOnvif.ini" />
+    <None Include="bin\plugins\plugins.dat" />
+    <None Include="bin\SurveillanceSampleCS.exe.config" />
+    <None Include="bin\WatchList.ilk" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+    <Content Include="bin\Activation\ActivationWizard.exe" />
+    <Content Include="bin\Activation\concrt140.dll" />
+    <Content Include="bin\Activation\id_gen.exe" />
+    <Content Include="bin\Activation\msvcp140.dll" />
+    <Content Include="bin\Activation\NCore.dll" />
+    <Content Include="bin\Activation\Neurotec.dll" />
+    <Content Include="bin\Activation\Neurotec.Licensing.dll" />
+    <Content Include="bin\Activation\NLicensing.dll" />
+    <Content Include="bin\Activation\pg.exe" />
+    <Content Include="bin\Activation\sqlite3.dll" />
+    <Content Include="bin\Activation\vccorlib140.dll" />
+    <Content Include="bin\Activation\vcomp140.dll" />
+    <Content Include="bin\Activation\vcruntime140.dll" />
+    <Content Include="bin\Cameras\NdmAkiyama\libak_face_sdk.dll" />
+    <Content Include="bin\Cameras\NdmAkiyama\NdmAkiyama.dll" />
+    <Content Include="bin\Cameras\NdmAkiyama\README.txt" />
+    <Content Include="bin\Cameras\NdmCanonEds\EDSDK.dll" />
+    <Content Include="bin\Cameras\NdmCanonEds\NdmCanonEds.dll" />
+    <Content Include="bin\Cameras\NdmCisco\NdmCisco.dll" />
+    <Content Include="bin\Cameras\NdmMobotixThermal\EventStreamClientSDK.dll" />
+    <Content Include="bin\Cameras\NdmMobotixThermal\NdmMobotixThermal.dll" />
+    <Content Include="bin\Cameras\NdmMobotix\NdmMobotix.dll" />
+    <Content Include="bin\Cameras\NdmNikonMaid\NdmNikonMaid.dll" />
+    <Content Include="bin\Cameras\NdmNikonMaid\NkdPTP.dll" />
+    <Content Include="bin\CountSubjects.exe" />
+    <Content Include="bin\CountSubjects.pdb" />
+    <Content Include="bin\cpprest140_2_9.dll" />
+    <Content Include="bin\FFmpeg.AutoGen.dll" />
+    <Content Include="bin\FFmpeg.AutoGen.xml" />
+    <Content Include="bin\InferenceEngines\NiemBlas\NiemBlas.dll" />
+    <Content Include="bin\InferenceEngines\NiemFingerNet\NiemFingerNet.dll" />
+    <Content Include="bin\InferenceEngines\NiemIntelIe\NiemIntelIe.dll" />
+    <Content Include="bin\InferenceEngines\NiemIntelIe\openvino.dll" />
+    <Content Include="bin\InferenceEngines\NiemIntelIe\openvino_intel_cpu_plugin.dll" />
+    <Content Include="bin\InferenceEngines\NiemIntelIe\tbb.dll" />
+    <Content Include="bin\InferenceEngines\NiemIntelIe\tbbmalloc.dll" />
+    <Content Include="bin\InferenceEngines\NiemTensorRt\NiemTensorRt.dll" />
+    <Content Include="bin\JWT.dll" />
+    <Content Include="bin\libvlc.dll" />
+    <Content Include="bin\libvlccore.dll" />
+    <Content Include="bin\LiveMedia.dll" />
+    <Content Include="bin\msvcp100.dll" />
+    <Content Include="bin\msvcp110.dll" />
+    <Content Include="bin\msvcp120.dll" />
+    <Content Include="bin\msvcp140.dll" />
+    <Content Include="bin\msvcr100.dll" />
+    <Content Include="bin\msvcr110.dll" />
+    <Content Include="bin\msvcr120.dll" />
+    <Content Include="bin\msvcr80.dll" />
+    <Content Include="bin\msvcr90.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\MySQLConnection.dll" />
+    <Content Include="bin\NBiometricClient.dll" />
+    <Content Include="bin\NBiometrics.dll" />
+    <Content Include="bin\NCore.dll" />
+    <Content Include="bin\NDevices.dll" />
+    <Content Include="bin\NdmMedia.dll" />
+    <Content Include="bin\NdmOnvif.dll" />
+    <Content Include="bin\NdmVirtual.dll" />
+    <Content Include="bin\Neurotec.Biometrics.Client.dll" />
+    <Content Include="bin\Neurotec.Biometrics.dll" />
+    <Content Include="bin\Neurotec.Biometrics.Gui.dll" />
+    <Content Include="bin\Neurotec.Biometrics.xml" />
+    <Content Include="bin\Neurotec.Devices.dll" />
+    <Content Include="bin\Neurotec.Devices.xml" />
+    <Content Include="bin\Neurotec.dll" />
+    <Content Include="bin\Neurotec.Gui.dll" />
+    <Content Include="bin\Neurotec.Gui.xml" />
+    <Content Include="bin\Neurotec.Licensing.dll" />
+    <Content Include="bin\Neurotec.Licensing.xml" />
+    <Content Include="bin\Neurotec.Media.dll" />
+    <Content Include="bin\Neurotec.Media.Processing.dll" />
+    <Content Include="bin\Neurotec.Media.Processing.xml" />
+    <Content Include="bin\Neurotec.Media.xml" />
+    <Content Include="bin\Neurotec.Surveillance.dll" />
+    <Content Include="bin\Neurotec.Surveillance.xml" />
+    <Content Include="bin\Neurotec.xml" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\NLicensing.dll" />
+    <Content Include="bin\NMedia.dll" />
+    <Content Include="bin\NMediaProc.dll" />
+    <Content Include="bin\NSurveillance.dll" />
+    <Content Include="bin\nvjpeg64_11.dll" />
+    <Content Include="bin\plugins\access\libaccess_concat_plugin.dll" />
+    <Content Include="bin\plugins\access\libaccess_imem_plugin.dll" />
+    <Content Include="bin\plugins\access\libaccess_mms_plugin.dll" />
+    <Content Include="bin\plugins\access\libaccess_realrtsp_plugin.dll" />
+    <Content Include="bin\plugins\access\libaccess_srt_plugin.dll" />
+    <Content Include="bin\plugins\access\libaccess_wasapi_plugin.dll" />
+    <Content Include="bin\plugins\access\libattachment_plugin.dll" />
+    <Content Include="bin\plugins\access\libcdda_plugin.dll" />
+    <Content Include="bin\plugins\access\libdcp_plugin.dll" />
+    <Content Include="bin\plugins\access\libdshow_plugin.dll" />
+    <Content Include="bin\plugins\access\libdtv_plugin.dll" />
+    <Content Include="bin\plugins\access\libdvdnav_plugin.dll" />
+    <Content Include="bin\plugins\access\libdvdread_plugin.dll" />
+    <Content Include="bin\plugins\access\libfilesystem_plugin.dll" />
+    <Content Include="bin\plugins\access\libftp_plugin.dll" />
+    <Content Include="bin\plugins\access\libhttps_plugin.dll" />
+    <Content Include="bin\plugins\access\libhttp_plugin.dll" />
+    <Content Include="bin\plugins\access\libidummy_plugin.dll" />
+    <Content Include="bin\plugins\access\libimem_plugin.dll" />
+    <Content Include="bin\plugins\access\liblibbluray_plugin.dll" />
+    <Content Include="bin\plugins\access\liblive555_plugin.dll" />
+    <Content Include="bin\plugins\access\libnfs_plugin.dll" />
+    <Content Include="bin\plugins\access\librtp_plugin.dll" />
+    <Content Include="bin\plugins\access\libsatip_plugin.dll" />
+    <Content Include="bin\plugins\access\libscreen_plugin.dll" />
+    <Content Include="bin\plugins\access\libsdp_plugin.dll" />
+    <Content Include="bin\plugins\access\libsftp_plugin.dll" />
+    <Content Include="bin\plugins\access\libshm_plugin.dll" />
+    <Content Include="bin\plugins\access\libsmb_plugin.dll" />
+    <Content Include="bin\plugins\access\libtcp_plugin.dll" />
+    <Content Include="bin\plugins\access\libtimecode_plugin.dll" />
+    <Content Include="bin\plugins\access\libudp_plugin.dll" />
+    <Content Include="bin\plugins\access\libvcd_plugin.dll" />
+    <Content Include="bin\plugins\access\libvdr_plugin.dll" />
+    <Content Include="bin\plugins\access\libvnc_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_dummy_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_file_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_http_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_livehttp_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_shout_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_srt_plugin.dll" />
+    <Content Include="bin\plugins\access_output\libaccess_output_udp_plugin.dll" />
+    <Content Include="bin\plugins\audio_mixer\libfloat_mixer_plugin.dll" />
+    <Content Include="bin\plugins\audio_mixer\libinteger_mixer_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libadummy_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libafile_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libamem_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libdirectsound_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libmmdevice_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libwasapi_plugin.dll" />
+    <Content Include="bin\plugins\audio_output\libwaveout_plugin.dll" />
+    <Content Include="bin\plugins\codec\liba52_plugin.dll" />
+    <Content Include="bin\plugins\codec\libadpcm_plugin.dll" />
+    <Content Include="bin\plugins\codec\libaes3_plugin.dll" />
+    <Content Include="bin\plugins\codec\libaraw_plugin.dll" />
+    <Content Include="bin\plugins\codec\libaribsub_plugin.dll" />
+    <Content Include="bin\plugins\codec\libavcodec_plugin.dll" />
+    <Content Include="bin\plugins\codec\libcc_plugin.dll" />
+    <Content Include="bin\plugins\codec\libcdg_plugin.dll" />
+    <Content Include="bin\plugins\codec\libcrystalhd_plugin.dll" />
+    <Content Include="bin\plugins\codec\libcvdsub_plugin.dll" />
+    <Content Include="bin\plugins\codec\libd3d11va_plugin.dll" />
+    <Content Include="bin\plugins\codec\libdca_plugin.dll" />
+    <Content Include="bin\plugins\codec\libddummy_plugin.dll" />
+    <Content Include="bin\plugins\codec\libdmo_plugin.dll" />
+    <Content Include="bin\plugins\codec\libdvbsub_plugin.dll" />
+    <Content Include="bin\plugins\codec\libdxva2_plugin.dll" />
+    <Content Include="bin\plugins\codec\libedummy_plugin.dll" />
+    <Content Include="bin\plugins\codec\libfaad_plugin.dll" />
+    <Content Include="bin\plugins\codec\libflac_plugin.dll" />
+    <Content Include="bin\plugins\codec\libfluidsynth_plugin.dll" />
+    <Content Include="bin\plugins\codec\libg711_plugin.dll" />
+    <Content Include="bin\plugins\codec\libjpeg_plugin.dll" />
+    <Content Include="bin\plugins\codec\libkate_plugin.dll" />
+    <Content Include="bin\plugins\codec\liblibass_plugin.dll" />
+    <Content Include="bin\plugins\codec\liblibmpeg2_plugin.dll" />
+    <Content Include="bin\plugins\codec\liblpcm_plugin.dll" />
+    <Content Include="bin\plugins\codec\libmft_plugin.dll" />
+    <Content Include="bin\plugins\codec\libmpg123_plugin.dll" />
+    <Content Include="bin\plugins\codec\liboggspots_plugin.dll" />
+    <Content Include="bin\plugins\codec\libopus_plugin.dll" />
+    <Content Include="bin\plugins\codec\libpng_plugin.dll" />
+    <Content Include="bin\plugins\codec\libqsv_plugin.dll" />
+    <Content Include="bin\plugins\codec\librawvideo_plugin.dll" />
+    <Content Include="bin\plugins\codec\librtpvideo_plugin.dll" />
+    <Content Include="bin\plugins\codec\libschroedinger_plugin.dll" />
+    <Content Include="bin\plugins\codec\libscte18_plugin.dll" />
+    <Content Include="bin\plugins\codec\libscte27_plugin.dll" />
+    <Content Include="bin\plugins\codec\libsdl_image_plugin.dll" />
+    <Content Include="bin\plugins\codec\libspdif_plugin.dll" />
+    <Content Include="bin\plugins\codec\libspeex_plugin.dll" />
+    <Content Include="bin\plugins\codec\libspudec_plugin.dll" />
+    <Content Include="bin\plugins\codec\libstl_plugin.dll" />
+    <Content Include="bin\plugins\codec\libsubsdec_plugin.dll" />
+    <Content Include="bin\plugins\codec\libsubstx3g_plugin.dll" />
+    <Content Include="bin\plugins\codec\libsubsusf_plugin.dll" />
+    <Content Include="bin\plugins\codec\libsvcdsub_plugin.dll" />
+    <Content Include="bin\plugins\codec\libt140_plugin.dll" />
+    <Content Include="bin\plugins\codec\libtextst_plugin.dll" />
+    <Content Include="bin\plugins\codec\libtheora_plugin.dll" />
+    <Content Include="bin\plugins\codec\libttml_plugin.dll" />
+    <Content Include="bin\plugins\codec\libtwolame_plugin.dll" />
+    <Content Include="bin\plugins\codec\libuleaddvaudio_plugin.dll" />
+    <Content Include="bin\plugins\codec\libvorbis_plugin.dll" />
+    <Content Include="bin\plugins\codec\libvpx_plugin.dll" />
+    <Content Include="bin\plugins\codec\libwebvtt_plugin.dll" />
+    <Content Include="bin\plugins\codec\libx264_plugin.dll" />
+    <Content Include="bin\plugins\codec\libx265_plugin.dll" />
+    <Content Include="bin\plugins\codec\libzvbi_plugin.dll" />
+    <Content Include="bin\plugins\d3d11\libdirect3d11_filters_plugin.dll" />
+    <Content Include="bin\plugins\d3d9\libdirect3d9_filters_plugin.dll" />
+    <Content Include="bin\plugins\deleted.txt" />
+    <Content Include="bin\plugins\demux\libadaptive_plugin.dll" />
+    <Content Include="bin\plugins\demux\libaiff_plugin.dll" />
+    <Content Include="bin\plugins\demux\libasf_plugin.dll" />
+    <Content Include="bin\plugins\demux\libau_plugin.dll" />
+    <Content Include="bin\plugins\demux\libavi_plugin.dll" />
+    <Content Include="bin\plugins\demux\libcaf_plugin.dll" />
+    <Content Include="bin\plugins\demux\libdemuxdump_plugin.dll" />
+    <Content Include="bin\plugins\demux\libdemux_cdg_plugin.dll" />
+    <Content Include="bin\plugins\demux\libdemux_chromecast_plugin.dll" />
+    <Content Include="bin\plugins\demux\libdemux_stl_plugin.dll" />
+    <Content Include="bin\plugins\demux\libdiracsys_plugin.dll" />
+    <Content Include="bin\plugins\demux\libdirectory_demux_plugin.dll" />
+    <Content Include="bin\plugins\demux\libes_plugin.dll" />
+    <Content Include="bin\plugins\demux\libflacsys_plugin.dll" />
+    <Content Include="bin\plugins\demux\libgme_plugin.dll" />
+    <Content Include="bin\plugins\demux\libh26x_plugin.dll" />
+    <Content Include="bin\plugins\demux\libimage_plugin.dll" />
+    <Content Include="bin\plugins\demux\libmjpeg_plugin.dll" />
+    <Content Include="bin\plugins\demux\libmkv_plugin.dll" />
+    <Content Include="bin\plugins\demux\libmod_plugin.dll" />
+    <Content Include="bin\plugins\demux\libmp4_plugin.dll" />
+    <Content Include="bin\plugins\demux\libmpc_plugin.dll" />
+    <Content Include="bin\plugins\demux\libmpgv_plugin.dll" />
+    <Content Include="bin\plugins\demux\libnoseek_plugin.dll" />
+    <Content Include="bin\plugins\demux\libnsc_plugin.dll" />
+    <Content Include="bin\plugins\demux\libnsv_plugin.dll" />
+    <Content Include="bin\plugins\demux\libnuv_plugin.dll" />
+    <Content Include="bin\plugins\demux\libogg_plugin.dll" />
+    <Content Include="bin\plugins\demux\libplaylist_plugin.dll" />
+    <Content Include="bin\plugins\demux\libps_plugin.dll" />
+    <Content Include="bin\plugins\demux\libpva_plugin.dll" />
+    <Content Include="bin\plugins\demux\librawaud_plugin.dll" />
+    <Content Include="bin\plugins\demux\librawdv_plugin.dll" />
+    <Content Include="bin\plugins\demux\librawvid_plugin.dll" />
+    <Content Include="bin\plugins\demux\libreal_plugin.dll" />
+    <Content Include="bin\plugins\demux\libsid_plugin.dll" />
+    <Content Include="bin\plugins\demux\libsmf_plugin.dll" />
+    <Content Include="bin\plugins\demux\libsubtitle_plugin.dll" />
+    <Content Include="bin\plugins\demux\libts_plugin.dll" />
+    <Content Include="bin\plugins\demux\libtta_plugin.dll" />
+    <Content Include="bin\plugins\demux\libty_plugin.dll" />
+    <Content Include="bin\plugins\demux\libvc1_plugin.dll" />
+    <Content Include="bin\plugins\demux\libvobsub_plugin.dll" />
+    <Content Include="bin\plugins\demux\libvoc_plugin.dll" />
+    <Content Include="bin\plugins\demux\libwav_plugin.dll" />
+    <Content Include="bin\plugins\demux\libxa_plugin.dll" />
+    <Content Include="bin\plugins\keystore\libfile_keystore_plugin.dll" />
+    <Content Include="bin\plugins\keystore\libmemory_keystore_plugin.dll" />
+    <Content Include="bin\plugins\logger\libconsole_logger_plugin.dll" />
+    <Content Include="bin\plugins\logger\libfile_logger_plugin.dll" />
+    <Content Include="bin\plugins\lua\liblua_plugin.dll" />
+    <Content Include="bin\plugins\meta_engine\libfolder_plugin.dll" />
+    <Content Include="bin\plugins\meta_engine\libtaglib_plugin.dll" />
+    <Content Include="bin\plugins\misc\libaddonsfsstorage_plugin.dll" />
+    <Content Include="bin\plugins\misc\libaddonsvorepository_plugin.dll" />
+    <Content Include="bin\plugins\misc\libaudioscrobbler_plugin.dll" />
+    <Content Include="bin\plugins\misc\libexport_plugin.dll" />
+    <Content Include="bin\plugins\misc\libfingerprinter_plugin.dll" />
+    <Content Include="bin\plugins\misc\libgnutls_plugin.dll" />
+    <Content Include="bin\plugins\misc\liblogger_plugin.dll" />
+    <Content Include="bin\plugins\misc\libstats_plugin.dll" />
+    <Content Include="bin\plugins\misc\libvod_rtsp_plugin.dll" />
+    <Content Include="bin\plugins\misc\libxml_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_asf_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_avi_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_dummy_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_mp4_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_mpjpeg_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_ogg_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_ps_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_ts_plugin.dll" />
+    <Content Include="bin\plugins\mux\libmux_wav_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_a52_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_copy_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_dirac_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_dts_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_flac_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_h264_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_hevc_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_mlp_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_mpeg4audio_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_mpeg4video_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_mpegaudio_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_mpegvideo_plugin.dll" />
+    <Content Include="bin\plugins\packetizer\libpacketizer_vc1_plugin.dll" />
+    <Content Include="bin\plugins\services_discovery\libmediadirs_plugin.dll" />
+    <Content Include="bin\plugins\services_discovery\libmicrodns_plugin.dll" />
+    <Content Include="bin\plugins\services_discovery\libpodcast_plugin.dll" />
+    <Content Include="bin\plugins\services_discovery\libsap_plugin.dll" />
+    <Content Include="bin\plugins\services_discovery\libupnp_plugin.dll" />
+    <Content Include="bin\plugins\services_discovery\libwindrive_plugin.dll" />
+    <Content Include="bin\plugins\spu\libaudiobargraph_v_plugin.dll" />
+    <Content Include="bin\plugins\spu\liblogo_plugin.dll" />
+    <Content Include="bin\plugins\spu\libmarq_plugin.dll" />
+    <Content Include="bin\plugins\spu\libmosaic_plugin.dll" />
+    <Content Include="bin\plugins\spu\libremoteosd_plugin.dll" />
+    <Content Include="bin\plugins\spu\librss_plugin.dll" />
+    <Content Include="bin\plugins\spu\libsubsdelay_plugin.dll" />
+    <Content Include="bin\plugins\stream_extractor\libarchive_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libadf_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libaribcam_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libcache_block_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libcache_read_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libhds_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libinflate_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libprefetch_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\librecord_plugin.dll" />
+    <Content Include="bin\plugins\stream_filter\libskiptags_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_autodel_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_bridge_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_chromaprint_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_chromecast_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_cycle_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_delay_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_description_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_display_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_dummy_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_duplicate_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_es_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_gather_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_mosaic_bridge_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_record_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_rtp_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_setid_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_smem_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_standard_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_stats_plugin.dll" />
+    <Content Include="bin\plugins\stream_out\libstream_out_transcode_plugin.dll" />
+    <Content Include="bin\plugins\text_renderer\libfreetype_plugin.dll" />
+    <Content Include="bin\plugins\text_renderer\libsapi_plugin.dll" />
+    <Content Include="bin\plugins\text_renderer\libtdummy_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libchain_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libgrey_yuv_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_10_p010_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_nv12_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_rgb_mmx_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_rgb_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_rgb_sse2_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_yuy2_mmx_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_yuy2_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi420_yuy2_sse2_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi422_i420_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi422_yuy2_mmx_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi422_yuy2_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libi422_yuy2_sse2_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\librv32_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libswscale_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libyuvp_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libyuy2_i420_plugin.dll" />
+    <Content Include="bin\plugins\video_chroma\libyuy2_i422_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libcaca_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libdirect3d11_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libdirect3d9_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libdirectdraw_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libdrawable_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libflaschen_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libglwin32_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libgl_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libvdummy_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libvmem_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libwgl_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libwingdi_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libwinhibit_plugin.dll" />
+    <Content Include="bin\plugins\video_output\libyuv_plugin.dll" />
+    <Content Include="bin\sqlite3.dll" />
+    <Content Include="bin\SurveillanceSampleCS.exe" />
+    <Content Include="bin\SurveillanceSampleCS.pdb" />
+    <Content Include="bin\System.Data.SQLite.dll" />
+    <Content Include="bin\System.Data.SQLite.xml" />
+    <Content Include="bin\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\System.Net.Http.Extensions.xml" />
+    <Content Include="bin\System.Net.Http.Primitives.dll" />
+    <Content Include="bin\System.Net.Http.Primitives.xml" />
+    <Content Include="bin\Twilio.dll" />
+    <Content Include="bin\Twilio.xml" />
+    <Content Include="bin\vccorlib140.dll" />
+    <Content Include="bin\vcomp120.dll" />
+    <Content Include="bin\vcomp140.dll" />
+    <Content Include="bin\vcruntime140.dll" />
+    <Content Include="bin\WatchList.exe" />
+    <Content Include="bin\WatchList.pdb" />
+    <Content Include="Neurotechnology.ico" />
+    <Content Include="Resources\Filter.png" />
+    <Content Include="Resources\ExitFullScreen.png" />
+    <None Include="Resources\Polygon.png" />
+    <None Include="Resources\Rectangle.png" />
+    <None Include="Resources\RectangleRed.png" />
+    <None Include="Resources\PolygonRed.png" />
+    <None Include="Resources\PolygonRedCrosed.png" />
+    <Content Include="Resources\Neurotechnology.ico" />
+    <Content Include="Resources\SubjectVisualization.png" />
+    <Content Include="Resources\Unknown.png" />
+    <Content Include="Resources\up.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\CrosedEye.png" />
+    <None Include="Resources\Eye.png" />
+    <None Include="Resources\%24this.Icon.ico" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\face.png" />
+    <Content Include="Resources\Help.png" />
+    <None Include="Resources\Layout1_1x1.png" />
+    <None Include="Resources\Layout2_1x2.png" />
+    <None Include="Resources\Layout2_2x1.png" />
+    <None Include="Resources\Layout3_1_2x1.png" />
+    <None Include="Resources\Layout3_1x3.png" />
+    <None Include="Resources\Layout3_3x1.png" />
+    <None Include="Resources\Layout4_1_1x3.png" />
+    <None Include="Resources\Layout4_1_3x1.png" />
+    <None Include="Resources\Layout4_2x2.png" />
+    <None Include="Resources\Layout5_2x1_3x1.png" />
+    <None Include="Resources\Layout6_1_5.png" />
+    <None Include="Resources\Layout6_2x3.png" />
+    <None Include="Resources\Layout6_3x2.png" />
+    <Content Include="Resources\key.png" />
+    <Content Include="Resources\Layout10_2x1_4x2.png" />
+    <Content Include="Resources\Layout8_2x2_4x1.png" />
+    <Content Include="Resources\Layout9_3x3.png" />
+    <Content Include="Resources\LicensePlate.png" />
+    <Content Include="Resources\Next.png" />
+    <Content Include="Resources\Objects.png" />
+    <Content Include="Resources\Play.png" />
+    <Content Include="Resources\Previous.png" />
+    <Content Include="Resources\Replay.png" />
+    <Content Include="Resources\rotate.png" />
+    <Content Include="Resources\Stop.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

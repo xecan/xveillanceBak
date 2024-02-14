@@ -1,0 +1,146 @@
+CREATE TABLE `cellphonewatchlist` (
+  `id` varchar(16) NOT NULL,
+  `owner` tinytext,
+  `storeAcctNum` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `licenseplatewatchlist` (
+  `id` varchar(16) NOT NULL,
+  `owner` tinytext,
+  `storeAcctNum` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `recordstable` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image` longblob,
+  `timestamp` timestamp NULL DEFAULT NULL,
+  `source` varchar(1000) DEFAULT NULL,
+  `car` float DEFAULT NULL,
+  `person` float DEFAULT NULL,
+  `bus` float DEFAULT NULL,
+  `truck` float DEFAULT NULL,
+  `bike` float DEFAULT NULL,
+  `red` float DEFAULT NULL,
+  `orange` float DEFAULT NULL,
+  `yellow` float DEFAULT NULL,
+  `green` float DEFAULT NULL,
+  `blue` float DEFAULT NULL,
+  `silver` float DEFAULT NULL,
+  `white` float DEFAULT NULL,
+  `black` float DEFAULT NULL,
+  `brown` float DEFAULT NULL,
+  `gray` float DEFAULT NULL,
+  `north` float DEFAULT NULL,
+  `northEast` float DEFAULT NULL,
+  `east` float DEFAULT NULL,
+  `southEast` float DEFAULT NULL,
+  `south` float DEFAULT NULL,
+  `southWest` float DEFAULT NULL,
+  `west` float DEFAULT NULL,
+  `northWest` float DEFAULT NULL,
+  `objThumbnail` longblob,
+  `objRectangleX` int DEFAULT NULL,
+  `objRectangleY` int DEFAULT NULL,
+  `objRectangleWidth` int DEFAULT NULL,
+  `objRectangleHeight` int DEFAULT NULL,
+  `objDetectionConfidence` float DEFAULT NULL,
+  `vehicleMake` text,
+  `vehicleMakeConfidence` float DEFAULT NULL,
+  `carModel` text,
+  `clothes` text,
+  `clothesConfidence` text,
+  `ageGroup` int DEFAULT NULL,
+  `ageGroupConfidence` float DEFAULT NULL,
+  `lpThumbnail` longblob,
+  `lpValue` text,
+  `lpOrigin` text,
+  `lpDetectionConfidence` float DEFAULT NULL,
+  `lpOcrConfidence` float DEFAULT NULL,
+  `lpRectangleX` int DEFAULT NULL,
+  `lpRectangleY` int DEFAULT NULL,
+  `lpRectangleWidth` int DEFAULT NULL,
+  `lpRectangleHeight` int DEFAULT NULL,
+  `picture` longblob,
+  `faceThumbnail` longblob,
+  `faceAvailable` tinyint(1) DEFAULT NULL,
+  `faceRectangleX` int DEFAULT NULL,
+  `faceRectangleY` int DEFAULT NULL,
+  `faceRectangleWidth` int DEFAULT NULL,
+  `faceRectangleHeight` int DEFAULT NULL,
+  `rectRoll` float DEFAULT NULL,
+  `leftEyeConfidence` int DEFAULT NULL,
+  `leftEyeX` int DEFAULT NULL,
+  `leftEyeY` int DEFAULT NULL,
+  `rightEyeConfidence` int DEFAULT NULL,
+  `rightEyeX` int DEFAULT NULL,
+  `rightEyeY` int DEFAULT NULL,
+  `faceQuality` int DEFAULT NULL,
+  `faceAttributes` longtext,
+  `matchId` text,
+  `matchScore` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `watchlist` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `features` blob,
+  `faceId` text,
+  `picture` longblob,
+  `thumbnail` longblob,
+  `enrollTime` timestamp NULL DEFAULT NULL,
+  `faceAvailable` tinyint(1) DEFAULT NULL,
+  `faceRectangleX` int DEFAULT NULL,
+  `faceRectangleY` int DEFAULT NULL,
+  `faceRectangleWidth` int DEFAULT NULL,
+  `faceRectangleHeight` int DEFAULT NULL,
+  `rectRoll` float DEFAULT NULL,
+  `leftEyeConfidence` int DEFAULT NULL,
+  `leftEyeX` int DEFAULT NULL,
+  `leftEyeY` int DEFAULT NULL,
+  `rightEyeConfidence` int DEFAULT NULL,
+  `rightEyeX` int DEFAULT NULL,
+  `rightEyeY` int DEFAULT NULL,
+  `comment` text,
+  `storeAcctNum` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `xv_company` (
+  `companyAcctNum` int NOT NULL,
+  `companyName` varchar(45) DEFAULT NULL,
+  `company` varchar(45) DEFAULT NULL,
+  `cell` varchar(45) DEFAULT NULL,
+  `Address` longtext,
+  PRIMARY KEY (`companyAcctNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `xv_store` (
+  `storeAcctNum` int NOT NULL,
+  `storeName` varchar(45) DEFAULT NULL,
+  `cameraURLIDs` varchar(45) DEFAULT NULL,
+  `cell` varchar(45) DEFAULT NULL,
+  `companyAcctNum` varchar(45) DEFAULT NULL,
+  `Address` longtext,
+  PRIMARY KEY (`storeAcctNum`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `xv_user` (
+  `userid` int NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(45) DEFAULT NULL,
+  `user_password` varchar(45) DEFAULT NULL,
+  `role` varchar(45) DEFAULT NULL,
+  `companyAcctNum` varchar(45) DEFAULT NULL,
+  `storeAcctNum` varchar(45) DEFAULT NULL,
+  `cell` varchar(45) DEFAULT NULL,
+  `Address` longtext,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+
+

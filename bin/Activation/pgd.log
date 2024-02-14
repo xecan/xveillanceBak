@@ -1,0 +1,45 @@
+2024-01-25 21:54:04 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-01-25 21:54:04 Current UTC time: 16:24:04
+2024-01-25 21:54:05 PG started.
+2024-01-25 21:59:50 PG stopped.
+2024-01-25 21:59:50 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-01-25 21:59:50 Current UTC time: 16:29:50
+2024-01-25 21:59:50 Warning: could't open license file "", errno 22
+2024-01-25 21:59:50 Found license file: D:\SentiVeillance_9_0_SDK_2023-12-14_updted\SentiVeillance_9_0_SDK\Bin\Licenses\SentiVeillance_Windows.lic
+2024-01-25 21:59:50 PG started.
+2024-01-25 21:59:51 Invalid license file supplied.
+2024-02-02 10:57:26 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-02 10:57:26 Current UTC time: 05:27:26
+2024-02-02 10:57:26 PG started.
+2024-02-02 10:57:31 PG stopped.
+2024-02-02 10:57:32 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-02 10:57:32 Current UTC time: 05:27:32
+2024-02-02 10:57:32 Warning: could't open license file "", errno 22
+2024-02-02 10:57:32 PG started.
+2024-02-02 10:57:33 Invalid license file supplied.
+2024-02-02 10:58:02 PG stopped.
+2024-02-02 10:58:02 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-02 10:58:02 Current UTC time: 05:28:02
+2024-02-02 10:58:02 Warning: could't open license file "", errno 22
+2024-02-02 10:58:02 Warning: could't open license file "", errno 22
+2024-02-02 10:58:02 Found license file: D:\SentiVeillance_9_0_SDK_2023-12-14_updted\SentiVeillance_9_0_SDK\Samples\Surveillance\CS\Xveillance_web_github\bin\Activation\Licenses\SentiVeillance_Windows.lic
+2024-02-02 10:58:02 PG started.
+2024-02-02 10:58:03 Invalid license file supplied.
+2024-02-02 10:58:03 Invalid license file supplied.
+2024-02-03 10:51:21 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-03 10:51:21 Current UTC time: 05:21:21
+2024-02-03 10:51:21 Found license file: D:\SentiVeillance_9_0_SDK_2023-12-14_updted\SentiVeillance_9_0_SDK\Samples\Surveillance\CS\Xveillance_web_github\bin\Activation\Licenses\SentiVeillance_Windows.lic
+2024-02-03 10:51:21 PG started.
+2024-02-06 12:10:42 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-06 12:10:42 Current UTC time: 06:40:42
+2024-02-06 12:10:42 Found license file: D:\SentiVeillance_9_0_SDK_2023-12-14_updted\SentiVeillance_9_0_SDK\Samples\Surveillance\CS\Xveillance_web_github\bin\Activation\Licenses\SentiVeillance_Windows.lic
+2024-02-06 12:10:42 PG started.
+2024-02-07 16:33:23 PG stopped.
+2024-02-07 16:33:51 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-07 16:33:51 Current UTC time: 11:03:51
+2024-02-07 16:33:51 Found license file: D:\SentiVeillance_9_0_SDK_2023-12-14_updted\SentiVeillance_9_0_SDK\Samples\Surveillance\CS\Xveillance_web_github\bin\Activation\Licenses\SentiVeillance_Windows.lic
+2024-02-07 16:33:51 PG started.
+2024-02-07 22:11:12 Starting PG (revision: 13.0.20231214-31b9d7e4c428e2191d6bce61383b6a5190b97af3, mode: Single, pc)
+2024-02-07 22:11:12 Current UTC time: 16:41:12
+2024-02-07 22:11:12 Found license file: D:\SentiVeillance_9_0_SDK_2023-12-14_updted\SentiVeillance_9_0_SDK\Samples\Surveillance\CS\Xveillance_web_github\bin\Activation\Licenses\SentiVeillance_Windows.lic
+2024-02-07 22:11:16 PG started.
